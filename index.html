@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>clip-path-icons</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *,
+        ::before,
+        ::after {
+            text-decoration: none;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50px;
+        }
+
+        div::after {
+            position: relative;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            display: block;
+            background-color: black;
+            content: "";
+        }
+
+        [title=hamburger]::after {
+            clip-path: polygon(0% 30%, 100% 30%, 100% 10%, 0% 10%,
+                    0% 60%, 100% 60%, 100% 40%, 0% 40%,
+                    0% 90%, 100% 90%, 100% 70%, 0% 70%)
+        }
+
+        [title=cross]::after {
+            clip-path: polygon(0% 14%, 14% 0%, 100% 86%, 86% 100%, 0% 14%, 0% 86%, 86% 0%, 100% 14%, 14% 100%, 0% 86%);
+        }
+
+        [title=play]::after {
+            clip-path: polygon(16% 0%, 15% 100%, 100% 50%);
+        }
+
+        [title=pause]::after {
+            clip-path: polygon(40% 0%, 0% 0%, 0% 100%, 40% 100%, 40% 0%, 60% 0%, 100% 0%, 100% 100%, 60% 100%, 60% 0%);
+        }
+    </style>
+</head>
+
+<body>
+    <div title="hamburger"></div>
+    <div title="cross"></div>
+    <div title="play"></div>
+    <div title="pause"></div>
+</body>
